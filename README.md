@@ -15,10 +15,14 @@ one bookcase level, and locating books later with an ARKit marker.
 ## Native iOS client
 
 Open `artifacts/bookshelf-ar-catalog/ios/BookshelfARCatalog.xcodeproj` in Xcode
-15 or later on macOS. Select the `BookshelfARCatalog` scheme, configure a signing
-team, and run it on a physical iPhone 12 or newer. ARKit world mapping is not
-available in the simulator. See `artifacts/bookshelf-ar-catalog/ios/README.md`
-for the physical-device acceptance checklist.
+15 or later on macOS. The checked-in `BookshelfARCatalog` scheme has Build, Run,
+Test, Profile, Analyze, and Archive actions. Select your Apple development team
+in Signing & Capabilities; automatic signing is enabled, and no personal team
+identifier or signing secret is committed. The default bundle identifier is
+`com.bookshelf.ar.catalog` and can be changed in the target settings if needed.
+Run on a physical iPhone 12 or newer. ARKit world mapping is not available in
+the simulator. See `artifacts/bookshelf-ar-catalog/ios/README.md` for the
+complete signing and physical-device acceptance checklist.
 
 ## Product flows
 
@@ -58,7 +62,9 @@ so scanning either ISBN form updates the same catalog item.
 
 ## Validation
 
-The Linux workspace cannot run Xcode or ARKit. Compile and run the native target
-from Xcode on macOS, then cover camera denial, invalid ISBNs, unknown ISBNs,
-offline/manual entry, repeat ISBN scans, shelf setup, persistence after reopening,
-search, GPS fallbacks, and AR relocalization on an iPhone 12 or newer.
+The Linux workspace cannot run Xcode, `xcodebuild`, or ARKit. On macOS, build and
+archive the shared scheme, then install it on an iPhone 12 or newer and cover
+camera denial, invalid ISBNs, unknown ISBNs, offline/manual entry, repeat ISBN
+scans, shelf setup, persistence after reopening, search, GPS fallbacks, and AR
+relocalization. The native README records the exact device checklist and the
+simulator limitations.
