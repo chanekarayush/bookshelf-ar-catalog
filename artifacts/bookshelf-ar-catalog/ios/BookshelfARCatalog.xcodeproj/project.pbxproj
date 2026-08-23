@@ -1,0 +1,251 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0000000000000000000011 /* BookshelfARCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* BookshelfARCatalogApp.swift */; };
+		AA0000000000000000000012 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* Models.swift */; };
+		AA0000000000000000000013 /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* LibraryStore.swift */; };
+		AA0000000000000000000014 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* Services.swift */; };
+		AA0000000000000000000015 /* BookshelfAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* BookshelfAR.swift */; };
+		AA0000000000000000000016 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000006 /* BarcodeScanner.swift */; };
+		AA0000000000000000000017 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000007 /* Design.swift */; };
+		AA0000000000000000000018 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* AppRouter.swift */; };
+		AA0000000000000000000019 /* LibraryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000009 /* LibraryViews.swift */; };
+		AA0000000000000000000020 /* FlowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000A /* FlowViews.swift */; };
+		AA0000000000000000000021 /* ShelfViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000B /* ShelfViews.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA0000000000000000000001 /* BookshelfARCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfARCatalogApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000002 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AA0000000000000000000003 /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000004 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		AA0000000000000000000005 /* BookshelfAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfAR.swift; sourceTree = "<group>"; };
+		AA0000000000000000000006 /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
+		AA0000000000000000000007 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		AA0000000000000000000008 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		AA0000000000000000000009 /* LibraryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViews.swift; sourceTree = "<group>"; };
+		AA000000000000000000000A /* FlowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViews.swift; sourceTree = "<group>"; };
+		AA000000000000000000000B /* ShelfViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViews.swift; sourceTree = "<group>"; };
+		AA0000000000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000000000000000000101 /* BookshelfARCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookshelfARCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0000000000000000000200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0000000000000000000300 = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000301 /* BookshelfARCatalog */,
+				AA0000000000000000000302 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000301 /* BookshelfARCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000001,
+				AA0000000000000000000002,
+				AA0000000000000000000003,
+				AA0000000000000000000004,
+				AA0000000000000000000005,
+				AA0000000000000000000006,
+				AA0000000000000000000007,
+				AA0000000000000000000008,
+				AA0000000000000000000009,
+				AA000000000000000000000A,
+				AA000000000000000000000B,
+				AA0000000000000000000100,
+			);
+			path = BookshelfARCatalog;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000302 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000101,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0000000000000000000400 /* BookshelfARCatalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0000000000000000000601 /* Build configuration list for PBXNativeTarget "BookshelfARCatalog" */;
+			buildPhases = (
+				AA0000000000000000000501 /* Sources */,
+				AA0000000000000000000200 /* Frameworks */,
+				AA0000000000000000000502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BookshelfARCatalog;
+			productName = BookshelfARCatalog;
+			productReference = AA0000000000000000000101;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000401 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					AA0000000000000000000400 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = AA0000000000000000000600 /* Build configuration list for PBXProject "BookshelfARCatalog" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA0000000000000000000300;
+			productRefGroup = AA0000000000000000000302;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0000000000000000000400,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA0000000000000000000502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA0000000000000000000501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000011,
+				AA0000000000000000000012,
+				AA0000000000000000000013,
+				AA0000000000000000000014,
+				AA0000000000000000000015,
+				AA0000000000000000000016,
+				AA0000000000000000000017,
+				AA0000000000000000000018,
+				AA0000000000000000000019,
+				AA0000000000000000000020,
+				AA0000000000000000000021,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000000000000000000700 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		AA0000000000000000000701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		AA0000000000000000000702 /* Debug target */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BookshelfARCatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bookshelf.ar.catalog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA0000000000000000000703 /* Release target */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BookshelfARCatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bookshelf.ar.catalog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA0000000000000000000600 /* Build configuration list for PBXProject "BookshelfARCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000700,
+				AA0000000000000000000701,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000601 /* Build configuration list for PBXNativeTarget "BookshelfARCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000702,
+				AA0000000000000000000703,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000401 /* Project object */;
+}
