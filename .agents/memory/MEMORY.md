@@ -1,1 +1,3 @@
 - [Expo iOS native module linking](expo-ios-native-module-linking.md) — Apple discovery alone is insufficient; resolve must show a Pod before a device build includes the module.
+- [Shelf metadata after mapping](shelf-metadata-after-mapping.md) — async GPS readings must be tied to the current world-map identity before persisting.
+- [GitHub publishing](github-publishing.md) — use the GitHub connector when this workspace’s SSH proxy has no push credentials; create PR refs from the feature branch only.
