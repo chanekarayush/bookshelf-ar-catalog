@@ -1,6 +1,6 @@
 # Bookshelf AR Catalog
 
-A local-first mobile library app for scanning ISBNs, editing book metadata, mapping
+A local-first native iOS library app for scanning ISBNs, editing book metadata, mapping
 one bookcase level, and locating books later with an ARKit marker.
 
 ## MVP scope
@@ -9,31 +9,16 @@ one bookcase level, and locating books later with an ARKit marker.
 - One local user, one device, one bookcase level
 - One catalog item per normalized ISBN
 - Open Library lookup with editable metadata and manual fallback
-- Local persistence with AsyncStorage for the first mobile slice
+- Local persistence with Codable data in UserDefaults
 - Android intentionally deferred until local AR persistence and relocalization are proven
 
-## Run locally
+## Native iOS client
 
-```bash
-pnpm install
-pnpm --filter @workspace/bookshelf-ar-catalog run dev
-```
-
-Scan the Expo QR code from the Replit URL bar to open the catalog in Expo Go. Camera
-scanning requires camera permission. The AR shelf flow requires the custom iOS build:
-Expo Go and the web preview intentionally show a native-build message instead of
-claiming that a preview is spatially accurate.
-
-For native shelf mapping, create and run an iOS development build from macOS:
-
-```bash
-pnpm --filter @workspace/bookshelf-ar-catalog exec expo prebuild --platform ios
-pnpm --filter @workspace/bookshelf-ar-catalog exec expo run:ios --device
-```
-
-An iOS Simulator can confirm that the custom module is linked and that unsupported
-hardware states are handled, but it cannot create a camera-based `ARWorldMap`.
-Map, place, and relocalize shelves on a physical iPhone 12 or newer.
+Open `artifacts/bookshelf-ar-catalog/ios/BookshelfARCatalog.xcodeproj` in Xcode
+15 or later on macOS. Select the `BookshelfARCatalog` scheme, configure a signing
+team, and run it on a physical iPhone 12 or newer. ARKit world mapping is not
+available in the simulator. See `artifacts/bookshelf-ar-catalog/ios/README.md`
+for the physical-device acceptance checklist.
 
 ## Product flows
 
@@ -45,7 +30,7 @@ Map, place, and relocalize shelves on a physical iPhone 12 or newer.
 
 ## ARKit implementation
 
-The iOS-only local Expo module uses ARKit world tracking and a locally persisted
+The native SwiftUI client uses ARKit world tracking and a locally persisted
 `ARWorldMap`, with RealityKit rendering book markers. Setting the shelf origin creates
 the named `bookshelf-origin` anchor, archives a separate world map per bookcase in
 Application Support, and stores its map identifier in the local library state. Book
@@ -60,7 +45,7 @@ tracking and a mapped world map. This prevents saving a fragile anchor while the
 has only just started tracking; aim the center of the view at the shelf, then pan the
 full level slowly in even light.
 
-The native module is deliberately iOS-only. Android is intentionally deferred until a
+The client is deliberately iOS-only. Android is intentionally deferred until a
 separate local relocalization spike is completed.
 
 ## Metadata behavior
@@ -73,13 +58,7 @@ so scanning either ISBN form updates the same catalog item.
 
 ## Validation
 
-```bash
-pnpm --filter @workspace/bookshelf-ar-catalog run typecheck
-```
-
-Manual acceptance testing must cover camera denial, invalid ISBNs, unknown ISBNs,
+The Linux workspace cannot run Xcode or ARKit. Compile and run the native target
+from Xcode on macOS, then cover camera denial, invalid ISBNs, unknown ISBNs,
 offline/manual entry, repeat ISBN scans, shelf setup, persistence after reopening,
-search, and AR relocalization on an iPhone 12 or newer. For the AR pass: map a shelf,
-place a book, force-close the app, relaunch it in front of the same shelf, then confirm
-that the marker returns. Repeat with a different shelf in view and confirm the app
-clearly offers to re-scan rather than claiming the shelf was found.
+search, GPS fallbacks, and AR relocalization on an iPhone 12 or newer.
