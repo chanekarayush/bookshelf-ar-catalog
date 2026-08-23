@@ -19,4 +19,4 @@ export function Screen({ children, scroll = true }: { children: ReactNode; scrol
     <View style={{ flex: 1, backgroundColor: colors.background }}>{content}</View>
   );
 }
-const styles = StyleSheet.create({ content: { paddingHorizontal: 22, gap: 16 } });
+const styles = StyleSheet.create({ content: { width: "100%", maxWidth: 390, alignSelf: "center", paddingHorizontal: 22, gap: 16 } });
