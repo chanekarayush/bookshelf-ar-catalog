@@ -19,6 +19,10 @@ function NativeTabLayout() {
         <Icon sf={{ default: 'house', selected: 'house.fill' }} />
         <Label>Home</Label>
       </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="catalog">
+        <Icon sf={{ default: 'books.vertical', selected: 'books.vertical.fill' }} />
+        <Label>Catalog</Label>
+      </NativeTabs.Trigger>
     </NativeTabs>
   );
 }
