@@ -1,0 +1,1 @@
+- [Expo iOS native module linking](expo-ios-native-module-linking.md) — Apple discovery alone is insufficient; resolve must show a Pod before a device build includes the module.
