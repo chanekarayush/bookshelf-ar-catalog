@@ -7,14 +7,13 @@ node_modules/
 .expo/
 dist/
 web-build/
+static-build/
 expo-env.d.ts
 
 # Native
-ios/
-!/ios/
-!/ios/**
-!modules/bookshelf-ar-native/ios/
-!modules/bookshelf-ar-native/ios/BookshelfARModule.swift
+# The generated iOS project is checked in so macOS/Xcode users can open it
+# directly. CocoaPods output and local build products remain ignored by
+# ios/.gitignore.
 android/
 *.orig.*
 *.jks

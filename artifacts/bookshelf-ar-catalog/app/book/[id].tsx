@@ -1,0 +1,26 @@
+import { Feather } from "@expo/vector-icons";
+import { router, useLocalSearchParams } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { BookCover } from "@/components/BookCover";
+import { Screen } from "@/components/Screen";
+import { useLibrary } from "@/context/LibraryContext";
+import { useColors } from "@/hooks/useColors";
+
+export default function BookDetails() {
+  const colors = useColors();
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { books } = useLibrary();
+  const book = books.find((item) => item.id === id);
+  if (!book) return <Screen><Text style={{ color: colors.foreground }}>Book not found.</Text></Screen>;
+
+  const action = !book.shelfId
+    ? { testID: "assign-book", icon: "layers" as const, label: "Assign to bookcase", onPress: () => router.push({ pathname: "/assign-book", params: { id: book.id } }) }
+    : book.placement
+      ? { testID: "locate-book", icon: "navigation" as const, label: "Locate on shelf", onPress: () => router.push({ pathname: "/locate", params: { id: book.id } }) }
+      : { testID: "locate-book", icon: "crosshair" as const, label: "Place on shelf", onPress: () => router.push({ pathname: "/locate", params: { id: book.id, placing: "true" } }) };
+
+  return <Screen><View style={styles.top}><Pressable onPress={() => router.back()}><Feather name="arrow-left" size={22} color={colors.foreground} /></Pressable><Text style={[styles.topTitle, { color: colors.foreground }]}>Book details</Text><View style={{ width: 22 }} /></View><View style={styles.hero}><BookCover uri={book.coverUrl} title={book.title} size={150} /><Text style={[styles.title, { color: colors.foreground }]}>{book.title}</Text><Text style={[styles.author, { color: colors.mutedForeground }]}>{book.authors}</Text></View><Pressable testID={action.testID} onPress={action.onPress} style={[styles.locate, { backgroundColor: colors.primary }]}><Feather name={action.icon} size={18} color={colors.primaryForeground} /><Text style={[styles.locateText, { color: colors.primaryForeground }]}>{action.label}</Text></Pressable><View style={[styles.info, { borderColor: colors.border }]}><Info label="ISBN" value={book.isbn} colors={colors} /><Info label="Publisher" value={book.publisher || "Not added"} colors={colors} /><Info label="Subjects" value={book.subjects || "Not added"} colors={colors} /></View><Text style={[styles.description, { color: colors.mutedForeground }]}>{book.description || "No description added yet."}</Text></Screen>;
+}
+
+function Info({ label, value, colors }: { label: string; value: string; colors: ReturnType<typeof useColors> }) { return <View style={styles.infoRow}><Text style={[styles.label, { color: colors.mutedForeground }]}>{label}</Text><Text style={[styles.value, { color: colors.foreground }]}>{value}</Text></View>; }
+const styles = StyleSheet.create({ top: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" }, topTitle: { fontSize: 15, fontWeight: "700" }, hero: { alignItems: "center", gap: 8, marginTop: 14 }, title: { fontSize: 24, fontWeight: "700", textAlign: "center", marginTop: 8 }, author: { fontSize: 14 }, locate: { height: 50, borderRadius: 15, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 9, marginTop: 6 }, locateText: { fontSize: 15, fontWeight: "700" }, info: { borderWidth: 1, borderRadius: 17, padding: 15, gap: 14, marginTop: 3 }, infoRow: { flexDirection: "row", justifyContent: "space-between", gap: 15 }, label: { fontSize: 12, fontWeight: "700" }, value: { flex: 1, textAlign: "right", fontSize: 13 }, description: { fontSize: 14, lineHeight: 21, marginTop: 3 } });

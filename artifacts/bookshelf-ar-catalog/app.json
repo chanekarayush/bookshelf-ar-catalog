@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Bookshelf AR Catalog",
+    "slug": "bookshelf-ar-catalog",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "bookshelf-ar-catalog",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bookshelf.ar.catalog",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Bookshelf AR Catalog uses the camera to scan ISBNs and save or find book positions on your shelf.",
+        "NSLocationWhenInUseUsageDescription": "Bookshelf AR Catalog uses your location to remember which room or area contains a shelf before opening precise AR locating."
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://replit.com/"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Bookshelf AR Catalog uses the camera to scan ISBNs and locate books on your shelf."
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
